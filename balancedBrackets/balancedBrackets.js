@@ -5,10 +5,10 @@ const balancedBrackets = str => {
   let line = str.split('');
   const stack = [];
   let ans = true;
-  const open = {'(': ')', '{': '}', '[': ']'};
-  const close = {')': true, '}': true, ']': true};
-  
-  line.forEach((item) => {
+  const open = { '(': ')', '{': '}', '[': ']' };
+  const close = { ')': true, '}': true, ']': true };
+
+  line.forEach(item => {
     if (open[item]) {
       stack.push(item);
     } else if (close[item]) {
@@ -18,6 +18,6 @@ const balancedBrackets = str => {
   return ans && stack.length === 0;
 };
 
-console.log(balancedBrackets('[({})]'));   // true
+console.log(balancedBrackets('[({})]')); // true
 console.log(balancedBrackets('[](){}')); // true
 console.log(balancedBrackets('[(]{)}')); // false
