@@ -7,6 +7,7 @@ const balancedBrackets = str => {
   let ans = true;
   const open = {'(': ')', '{': '}', '[': ']'};
   const close = {')': true, '}': true, ']': true};
+  
   line.forEach((item) => {
     if (open[item]) {
       stack.push(item);
